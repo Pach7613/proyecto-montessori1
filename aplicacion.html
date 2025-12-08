@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aplicación del Método - Montessori</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- Tu CSS -->
+<link rel="stylesheet" href="css/styles.css">
+
+<style>
+    .section-card {
+        background: #ffffff;
+        border-radius: 15px;
+        padding: 25px;
+        margin-bottom: 25px;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+        animation: fadeIn 0.7s ease;
+    }
+
+    .section-card h3 {
+        font-weight: 600;
+    }
+
+    .icon {
+        font-size: 32px;
+        margin-right: 12px;
+        color: #4CAF50;
+    }
+
+    @keyframes fadeIn {
+        from { opacity:0; transform: translateY(10px); }
+        to { opacity:1; transform: translateY(0); }
+    }
+    /* Logo UMA */
+.logo-uma img {
+    width: 140px;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 2000;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.logo-uma img:hover {
+    transform: scale(1.05);
+}
+/* Logo izquierdo */
+.logo-left img {
+    width: 120px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 2000;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.logo-left img:hover {
+    transform: scale(1.05);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Logo UMA con enlace -->
+<div class="logo-uma">
+    <a href="https://www.uma.es/facultad-de-ciencias-de-la-educacion/" target="_blank" rel="noopener noreferrer">
+        <img src="./img/logouma.png" alt="Logo UMA">
+    </a>
+</div>
+<!-- Logo PROFEQUERONES (izquierda) -->
+<div class="logo-left">
+    <a target="_blank" rel="noopener noreferrer">
+        <img src="./img/escudo.png" alt="Escudo Profequerones">
+    </a>
+</div>
+
+
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+<div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Método Montessori</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="introduccion.html">Introducción</a></li>
+            <li class="nav-item"><a class="nav-link" href="historia.html">Historia</a></li>
+            <li class="nav-item"><a class="nav-link" href="metodologia.html">Metodología</a></li>
+            <li class="nav-item"><a class="nav-link" href="principios.html">Principios</a></li>
+            <li class="nav-item"><a class="nav-link active" href="aplicacion.html">Aplicación</a></li>
+            <li class="nav-item"><a class="nav-link" href="biblioteca.html">Biblioteca</a></li>
+            <li class="nav-item"><a class="nav-link" href="materiales.html">Materiales</a></li>
+            <li class="nav-item"><a class="nav-link" href="conclusion.html">Conclusión</a></li>
+            <li class="nav-item"><a class="nav-link" href="integrantes.html">Integrantes</a></li>
+        </ul>
+    </div>
+</div>
+</nav>
+
+<!-- CONTENIDO -->
+<div class="container py-5 mt-4">
+    <h1 class="mb-4 fw-bold fade-in">Aplicación del Método Montessori</h1>
+
+    <!-- Sección 1 -->
+    <div class="section-card">
+        <h3><i class="bi bi-emoji-smile-fill icon"></i>Motivación innata y aprendizaje activo</h3>
+        <p>
+            Los niños poseen una motivación natural para aprender desde su nacimiento. 
+            Según Montessori, el aprendizaje surge de la participación activa, 
+            especialmente mediante el uso de las manos y la exploración directa.
+        </p>
+    </div>
+
+    <!-- Sección 2 -->
+    <div class="section-card">
+        <h3><i class="bi bi-controller icon"></i>El juego como base del aprendizaje</h3>
+        <p>
+            El juego es una actividad voluntaria, creativa, placentera y esencial para el desarrollo.  
+            A través de él, los niños adquieren habilidades sociales, lenguaje, 
+            coordinación, solución de problemas y regulación emocional.
+        </p>
+        <p>
+            Para Montessori, el juego “es el trabajo del niño” porque representa 
+            el medio principal por el cual aprende y comprende el mundo.
+        </p>
+    </div>
+
+    <!-- Sección 3 -->
+    <div class="section-card">
+        <h3><i class="bi bi-door-open-fill icon"></i>Ambiente preparado</h3>
+        <p>
+            El ambiente Montessori está adaptado a la medida del niño:  
+            muebles bajos, estanterías accesibles y materiales organizados.  
+            Esto permite libertad de movimiento, elección autónoma 
+            y un orden interno que guía el aprendizaje.
+        </p>
+    </div>
+
+    <!-- Sección 4 -->
+    <div class="section-card">
+        <h3><i class="bi bi-people-fill icon"></i>Trabajo individual y colectivo</h3>
+        <p>
+            El método permite alternar entre actividades individuales y colectivas.  
+            El trabajo personal fomenta la concentración y autonomía,  
+            mientras que el trabajo grupal favorece la colaboración 
+            y el desarrollo social.
+        </p>
+    </div>
+
+    <!-- Sección 5 -->
+    <div class="section-card">
+        <h3><i class="bi bi-boxes icon"></i>Selección de materiales didácticos</h3>
+        <p>
+            Los materiales Montessori están diseñados con un propósito preciso  
+            y permiten al niño aprender mediante la auto-corrección,  
+            evitando la intervención constante del adulto.
+        </p>
+
+        <ul>
+            <li><strong>Materiales sensoriales:</strong> Basados en los sentidos para desarrollar percepción, orden y clasificación.</li>
+            <li><strong>Materiales de lenguaje:</strong> Enfocados en vocabulario, pronunciación, escritura y lectura.</li>
+            <li><strong>Materiales matemáticos:</strong> La zona más desarrollada del método, basada en lógica, secuencias y manipulación.</li>
+            <li><strong>Materiales de ciencias:</strong> Observación del entorno, fenómenos naturales, flora y fauna.</li>
+            <li><strong>Materiales artísticos:</strong> Permiten expresión creativa, técnicas variadas y desarrollo del estilo personal.</li>
+        </ul>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

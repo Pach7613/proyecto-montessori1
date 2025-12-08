@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Método Montessori - Inicio</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Estilos propios -->
+<link rel="stylesheet" href="css/styles.css">
+
+<!-- Iconos -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+<!-- AOS Animations -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+/* Banner */
+.quad-banner {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.banner-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+
+.banner-item:hover img {
+    transform: scale(1.05);
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 10;
+}
+
+.btn-custom {
+    background: #6c63ff;
+    color: white;
+    border-radius: 50px;
+    padding: 0.75rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+    background: #423ac7;
+    transform: scale(1.05);
+}
+
+/* Fade-in con delay */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+.fade-in.delay-1 { animation-delay: 0.5s; }
+.fade-in.delay-2 { animation-delay: 1s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo UMA */
+.logo-uma img {
+    width: 140px;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 2000;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.logo-uma img:hover {
+    transform: scale(1.05);
+}
+/* Logo izquierdo */
+.logo-left img {
+    width: 120px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 2000;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.logo-left img:hover {
+    transform: scale(1.05);
+}
+
+</style>
+</head>
+<body>
+
+<!-- Logo UMA con enlace -->
+<div class="logo-uma">
+    <a href="https://www.uma.es/facultad-de-ciencias-de-la-educacion/" target="_blank" rel="noopener noreferrer">
+        <img src="./img/logouma.png" alt="Logo UMA">
+    </a>
+</div>
+<!-- Logo PROFEQUERONES (izquierda) -->
+<div class="logo-left">
+    <a target="_blank" rel="noopener noreferrer">
+        <img src="./img/escudo.png" alt="Escudo Profequerones">
+    </a>
+</div>
+
+
+
+<!-- NAVBAR (sin cambios) -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">Método Montessori</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="introduccion.html">Introducción</a></li>
+                <li class="nav-item"><a class="nav-link" href="historia.html">Historia</a></li>
+                <li class="nav-item"><a class="nav-link" href="metodologia.html">Metodología</a></li>
+                <li class="nav-item"><a class="nav-link" href="principios.html">Principios</a></li>
+                <li class="nav-item"><a class="nav-link active" href="aplicacion.html">Aplicación</a></li>
+                <li class="nav-item"><a class="nav-link" href="biblioteca.html">Biblioteca</a></li>
+                <li class="nav-item"><a class="nav-link" href="materiales.html">Materiales</a></li>
+                <li class="nav-item"><a class="nav-link" href="conclusion.html">Conclusión</a></li>
+                <li class="nav-item"><a class="nav-link" href="integrantes.html">Integrantes</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- BANNER 4 IMÁGENES CON ENLACES -->
+<section class="quad-banner">
+    <a href="./introduccion.html" class="banner-item top-left" aria-label="Ir a Historia">
+        <img src="./img/imagen1.jpg" alt="Historia">
+        <span class="banner-label"></span>
+    </a>
+
+    <a href="./historia.html" class="banner-item top-right" aria-label="Ir a Principios">
+        <img src="./img/imagen2.webp" alt="Principios">
+        <span class="banner-label"></span>
+    </a>
+
+    <a href="./principios.html" class="banner-item bottom-left" aria-label="Ir a Materiales">
+        <img src="./img/imagen3.jpg" alt="Materiales">
+        <span class="banner-label"></span>
+    </a>
+
+    <a href="./aplicacion.html" class="banner-item bottom-right" aria-label="Ir a Conclusión">
+        <img src="./img/imagen4.jpg" alt="Conclusión">
+        <span class="banner-label"></span>
+    </a>
+
+    <!-- Texto central -->
+    <div class="banner-text">
+        <h1 class="display-3 fw-bold text-white fade-in">Método Montessori</h1>
+        <p class="lead text-white fade-in delay-1">Teoría de la Educación · Universidad de Málaga</p>
+        <a href="introduccion.html" class="btn btn-custom btn-lg fade-in delay-2">Empezar</a>
+    </div>
+</section>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({
+    duration: 800,
+    easing: 'ease-out-quart',
+    once: true
+});
+</script>
+
+</body>
+</html>

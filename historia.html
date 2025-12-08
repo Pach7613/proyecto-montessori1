@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Historia - Método Montessori</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Tu CSS principal -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    :root {
+      --accent: #ff7b7b;
+    }
+
+    body {
+      font-family: system-ui, "Segoe UI", Roboto, Arial;
+      background: linear-gradient(180deg, #f8fbff 0%, #fff 60%);
+      color: #222;
+      padding-top: 74px;
+    }
+
+    /* =======================
+       LOGO UMA (corregido)
+       ======================= */
+    .logo-uma {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 2000;
+    }
+
+    .logo-uma img {
+      width: 140px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .logo-uma img:hover {
+      transform: scale(1.05);
+    }
+
+    /* ======= Contenido ======= */
+    .hero {
+      padding: 3rem 0;
+    }
+
+    .card-article {
+      border: 0;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(29, 31, 41, 0.06);
+    }
+
+    .feature-img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      height: 100%;
+    }
+
+    .lead-lite {
+      color: #4a5568;
+      font-size: 1rem;
+    }
+
+    footer.site-footer {
+      margin-top: 3rem;
+      padding: 2rem 0;
+      color: #6b7280;
+      text-align: center;
+      font-size: 14px;
+    }
+    /* Logo izquierdo */
+.logo-left img {
+    width: 120px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 2000;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.logo-left img:hover {
+    transform: scale(1.05);
+}
+
+  </style>
+</head>
+<body>
+
+<!-- Logo UMA -->
+<div class="logo-uma">
+  <a href="https://www.uma.es/facultad-de-ciencias-de-la-educacion/"
+     target="_blank" rel="noopener noreferrer">
+    <img src="./img/logouma.png" alt="Logo UMA">
+  </a>
+</div>
+<!-- Logo PROFEQUERONES (izquierda) -->
+<div class="logo-left">
+    <a target="_blank" rel="noopener noreferrer">
+        <img src="./img/escudo.png" alt="Escudo Profequerones">
+    </a>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Método Montessori</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item"><a class="nav-link" href="introduccion.html">Introducción</a></li>
+
+        <!-- SOLO ESTE ACTIVO -->
+        <li class="nav-item"><a class="nav-link active" href="historia.html">Historia</a></li>
+<li class="nav-item"><a class="nav-link" href="metodologia.html">Metodología</a></li>
+        <li class="nav-item"><a class="nav-link" href="principios.html">Principios</a></li>
+        <li class="nav-item"><a class="nav-link" href="aplicacion.html">Aplicación</a></li>
+        <li class="nav-item"><a class="nav-link" href="biblioteca.html">Biblioteca</a></li>
+        <li class="nav-item"><a class="nav-link" href="materiales.html">Materiales</a></li>
+        <li class="nav-item"><a class="nav-link" href="conclusion.html">Conclusión</a></li>
+        <li class="nav-item"><a class="nav-link" href="integrantes.html">Integrantes</a></li>
+
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<!-- CONTENIDO -->
+<main class="container hero">
+  <div class="row g-4 align-items-center">
+    <div class="col-lg-6">
+      <div class="card card-article p-3 p-lg-4">
+        <div class="row g-3">
+          <div class="col-4 col-sm-3">
+            <img src="./img/mariamontessori.jpg" class="feature-img" alt="Montessori">
+          </div>
+
+          <div class="col">
+            <h1 class="h4 mb-1">Historia del Método Montessori</h1>
+            <p class="lead-lite mb-2">
+              María Montessori (1870-1952) fue una pedagoga italiana cuya metodología
+              transformó la educación infantil basada en autonomía, materiales sensoriales
+              y respeto por el ritmo del niño.
+            </p>
+
+            <a href="https://montessorispace.com/maria-montessori/"
+               class="btn"
+               style="background:var(--accent); color:white; font-weight:600;"
+               target="_blank">
+              Leer más
+            </a>
+          </div>
+        </div>
+
+        <hr class="my-3">
+
+        <div class="px-1">
+          <h3 class="h6">Origen y primeros pasos</h3>
+          <p class="mb-0">
+            Montessori comenzó a trabajar con niños con discapacidades y luego abrió en
+            1907 la primera "Casa de los Niños" en Roma. Su método se expandió por Europa
+            y América.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card card-article p-4">
+        <h2 class="h5">Aspectos clave</h2>
+
+        <ul class="list-unstyled mt-3 mb-0">
+          <li class="d-flex mb-2">
+            <div class="me-3 p-2 rounded-3" style="background:#fff0f0; color:#d9534f; width:46px; text-align:center;">1</div>
+            <div>
+              <strong>Materiales sensoriales</strong>
+              <div class="text-muted small">Objetos diseñados para desarrollar percepción y orden.</div>
+            </div>
+          </li>
+
+          <li class="d-flex mb-2">
+            <div class="me-3 p-2 rounded-3" style="background:#eef7ff; color:#0d6efd; width:46px; text-align:center;">2</div>
+            <div>
+              <strong>Autonomía</strong>
+              <div class="text-muted small">El niño elige su actividad y aprende a su ritmo.</div>
+            </div>
+          </li>
+
+          <li class="d-flex">
+            <div class="me-3 p-2 rounded-3" style="background:#f6fff3; color:#28a745; width:46px; text-align:center;">3</div>
+            <div>
+              <strong>Ambiente preparado</strong>
+              <div class="text-muted small">Espacios pensados para la exploración independiente.</div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="mt-3">
+          <a href="materiales.html" class="btn btn-outline-secondary">Ver materiales</a>
+          <a href="biblioteca.html" class="btn btn-outline-primary ms-2">Biblioteca</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="row mt-4">
+    <div class="col-12">
+      <div class="card card-article p-4">
+        <h3>Breve cronología</h3>
+        <ol>
+          <li>1907: Primera Casa de los Niños en Roma.</li>
+          <li>1910–1930: Difusión por Europa y América.</li>
+          <li>1952: Fallecimiento de María Montessori.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

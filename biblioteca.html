@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biblioteca Montessori</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+<!-- AOS Animations -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<!-- Estilos personalizados -->
+<link href="css/styles.css" rel="stylesheet">
+
+<style>
+    body {
+        background-color: #f5f5f5;
+        font-family: "Segoe UI", sans-serif;
+    }
+
+    /* Encabezado */
+    h1 {
+        font-weight: 800;
+        letter-spacing: 1px;
+        color: #333;
+    }
+
+    /* Cards */
+    .book-card {
+        border-radius: 18px;
+        overflow: hidden;
+        background: white;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 5px 14px rgba(0,0,0,0.12);
+        transition: 0.35s ease;
+    }
+
+    .book-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.18);
+    }
+
+    .book-img {
+        height: 260px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .card-body {
+        padding: 18px;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        min-height: 52px;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+        color: #555;
+    }
+
+    /* Modal */
+    .modal-content {
+        border-radius: 20px;
+        border: none;
+        box-shadow: 0 8px 35px rgba(0,0,0,0.25);
+    }
+
+    #modalImg {
+        border-radius: 10px;
+    }
+    /* Logo UMA */
+.logo-uma img {
+    width: 140px;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 2000;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.logo-uma img:hover {
+    transform: scale(1.05);
+}
+/* Logo izquierdo */
+.logo-left img {
+    width: 120px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 2000;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.logo-left img:hover {
+    transform: scale(1.05);
+}
+
+</style>
+</head>
+<body>
+
+<!-- Logo UMA con enlace -->
+<div class="logo-uma">
+    <a href="https://www.uma.es/facultad-de-ciencias-de-la-educacion/" target="_blank" rel="noopener noreferrer">
+        <img src="./img/logouma.png" alt="Logo UMA">
+    </a>
+</div>
+<!-- Logo PROFEQUERONES (izquierda) -->
+<div class="logo-left">
+    <a target="_blank" rel="noopener noreferrer">
+        <img src="./img/escudo.png" alt="Escudo Profequerones">
+    </a>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">Método Montessori</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="introduccion.html">Introducción</a></li>
+                <li class="nav-item"><a class="nav-link" href="historia.html">Historia</a></li>
+                <li class="nav-item"><a class="nav-link" href="metodologia.html">Metodología</a></li>
+                <li class="nav-item"><a class="nav-link" href="principios.html">Principios</a></li>
+                <li class="nav-item"><a class="nav-link" href="aplicacion.html">Aplicación</a></li>
+                <li class="nav-item"><a class="nav-link active" href="biblioteca.html">Biblioteca</a></li>
+                <li class="nav-item"><a class="nav-link" href="materiales.html">Materiales</a></li>
+                <li class="nav-item"><a class="nav-link" href="conclusion.html">Conclusión</a></li>
+                <li class="nav-item"><a class="nav-link" href="integrantes.html">Integrantes</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- CONTENIDO -->
+<div class="container py-5" style="margin-top: 100px;">
+
+    <!-- TITULO -->
+    <h1 class="text-center mb-5" data-aos="fade-down">
+        Biblioteca Montessori
+    </h1>
+
+    <!-- GRID DE LIBROS -->
+    <div class="row g-4">
+
+        <!-- ======================
+             LIBRO 1
+        ======================= -->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
+            <div class="card book-card h-100" 
+                 data-bs-toggle="modal" 
+                 data-bs-target="#bookModal"
+                 data-title="El Método de la Pedagogía Científica"
+                 data-img="img/libro1.jpg"
+                 data-desc="Esta obra recoge sus teorías sobre educación y el origen de su método.">
+
+                <img src="img/libro1.jpg" class="book-img" alt="Libro 1">
+                <div class="card-body">
+                    <h5 class="card-title">El Método de la Pedagogía Científica</h5>
+                    <p class="card-text">Obra clave donde se explican sus bases educativas.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======================
+             LIBRO 2
+        ======================= -->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="80">
+            <div class="card book-card h-100"
+                 data-bs-toggle="modal"
+                 data-bs-target="#bookModal"
+                 data-title="The Absorbent Mind"
+                 data-img="img/libro2.jpg"
+                 data-desc="La visión de Montessori sobre la mente absorbente del niño.">
+
+                <img src="img/libro2.jpg" class="book-img" alt="Libro 2">
+                <div class="card-body">
+                    <h5 class="card-title">The Absorbent Mind</h5>
+                    <p class="card-text">Una obra fundamental sobre el desarrollo mental infantil.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======================
+             LIBRO 3
+        ======================= -->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="160">
+            <div class="card book-card h-100"
+                 data-bs-toggle="modal"
+                 data-bs-target="#bookModal"
+                 data-title="El niño: el secreto de la infancia"
+                 data-img="img/libro3.jpg"
+                 data-desc="Reflexión profunda sobre la esencia del niño y su mundo interior.">
+
+                <img src="img/libro3.jpg" class="book-img" alt="Libro 3">
+                <div class="card-body">
+                    <h5 class="card-title">El niño: el secreto de la infancia</h5>
+                    <p class="card-text">Una mirada íntima al desarrollo y la mente del niño.</p>
+                </div>
+            </div>
+        </div>
+
+       <!-- ======================
+             LIBRO 4 (COMPLETO)
+        ======================= -->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="150">
+            <div class="card book-card h-100"
+                data-bs-toggle="modal"
+                data-bs-target="#bookModal"
+                data-title="Educación para la Paz"
+                data-img="img/libro4.jpg"
+                data-desc="Reflexiona sobre la paz desde una perspectiva montessoriana, entendida no como ausencia de conflicto, sino como un proceso educativo profundo y continuo. Montessori plantea que la paz es un concepto positivo basado en la reforma moral y social, alcanzable mediante una transformación de los métodos pedagógicos y la educación escolar.">
+
+                <img src="img/libro4.jpg" class="book-img" alt="Libro 4">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Educación para la Paz</h5>
+                    <p class="card-text">La paz como proyecto educativo y transformación social.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======================
+             LIBRO 5 (COMPLETO)
+        ======================= -->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="card book-card h-100"
+                data-bs-toggle="modal"
+                data-bs-target="#bookModal"
+                data-title="El niño en la familia"
+                data-img="img/libro5.jpg"
+                data-desc="Montessori propone una 'escuela para padres' destinada a comprender y respetar el desarrollo natural del niño. La obra enseña a los adultos a observar sin intervenir en exceso, a confiar en su potencial innato y a crear un entorno familiar que nutra su desarrollo interior, emocional y espiritual, promoviendo una crianza consciente y respetuosa.">
+
+                <img src="img/libro5.jpg" class="book-img" alt="Libro 5">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">El niño en la familia</h5>
+                    <p class="card-text">Una guía para comprender y acompañar al niño en su hogar.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======================
+             LIBRO 6 (COMPLETO)
+        ======================= -->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="250">
+            <div class="card book-card h-100"
+                data-bs-toggle="modal"
+                data-bs-target="#bookModal"
+                data-title="Educación y desarrollo humano"
+                data-img="img/libro6.jpg"
+                data-desc="Plantea un cambio radical en la enseñanza: del aprendizaje memorístico tradicional a un modelo centrado en habilidades esenciales como la creatividad, la resiliencia, el pensamiento crítico y la responsabilidad. Propone una educación flexible y adaptativa que responda realmente a las necesidades del niño y del mundo actual.">
+
+                <img src="img/libro6.jpg" class="book-img" alt="Libro 6">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Educación y desarrollo humano</h5>
+                    <p class="card-text">Una visión moderna que transforma la enseñanza tradicional.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- LIBRO 7 -->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="card book-card h-100" data-bs-toggle="modal" data-bs-target="#bookModal" data-title="" data-img="" data-desc="">
+                <img src="img/libro7.jpg" class="book-img" alt="Libro 7">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Nombre del Libro 7</h5>
+                    <p class="card-text">Descripción del libro número 7.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- LIBRO 8 -->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="350">
+            <div class="card book-card h-100" data-bs-toggle="modal" data-bs-target="#bookModal" data-title="" data-img="" data-desc="">
+                <img src="img/libro8.jpg" class="book-img" alt="Libro 8">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Nombre del Libro 8</h5>
+                    <p class="card-text">Descripción del libro número 8.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FILA 3: LIBROS 9-12 con delays 400, 450, 500, 550 -->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="card book-card h-100" data-bs-toggle="modal" data-bs-target="#bookModal" data-title="" data-img="" data-desc="">
+                <img src="img/libro9.jpg" class="book-img" alt="Libro 9">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Nombre del Libro 9</h5>
+                    <p class="card-text">Descripción del libro número 9.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="450">
+            <div class="card book-card h-100" data-bs-toggle="modal" data-bs-target="#bookModal" data-title="" data-img="" data-desc="">
+                <img src="img/libro10.jpg" class="book-img" alt="Libro 10">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Nombre del Libro 10</h5>
+                    <p class="card-text">Descripción del libro número 10.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="card book-card h-100" data-bs-toggle="modal" data-bs-target="#bookModal" data-title="" data-img="" data-desc="">
+                <img src="img/libro11.jpg" class="book-img" alt="Libro 11">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Nombre del Libro 11</h5>
+                    <p class="card-text">Descripción del libro número 11.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="550">
+            <div class="card book-card h-100" data-bs-toggle="modal" data-bs-target="#bookModal" data-title="" data-img="" data-desc="">
+                <img src="img/libro12.jpg" class="book-img" alt="Libro 12">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Nombre del Libro 12</h5>
+                    <p class="card-text">Descripción del libro número 12.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal fade" id="bookModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content p-2">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitle"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body text-center">
+        <img id="modalImg" src="" class="img-fluid mb-3">
+        <p id="modalDesc" class="mt-3"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+    AOS.init({ duration: 600, once: true });
+
+    // Modal dinámico
+    const modal = document.getElementById('bookModal');
+
+    modal.addEventListener('show.bs.modal', event => {
+        const card = event.relatedTarget;
+
+        document.getElementById('modalTitle').textContent = card.getAttribute('data-title');
+        document.getElementById('modalImg').src = card.getAttribute('data-img');
+        document.getElementById('modalDesc').textContent = card.getAttribute('data-desc');
+    });
+</script>
+
+</body>
+</html>

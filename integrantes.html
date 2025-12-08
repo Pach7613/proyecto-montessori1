@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrantes | Método Montessori</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        body {
+            padding-top: 90px;
+            background: #f4f4f4;
+        }
+
+        /* ---------- BANNER ---------- */
+        .banner {
+            background: linear-gradient(135deg, #6c63ff, #8f87ff);
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            border-radius: 0 0 40px 40px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .banner h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        /* ---------- TARJETAS (GLASS EFFECT) ---------- */
+        .team-card {
+            border-radius: 20px;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform .4s ease, box-shadow .4s ease;
+            animation: fadeInUp 0.9s ease both;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        /* ---------- IMAGEN CON GIRO ---------- */
+        .team-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #6c63ff;
+            transition: transform .6s ease;
+        }
+
+        .team-card:hover .team-img {
+            transform: rotate(12deg) scale(1.08);
+        }
+
+        /* ---------- ICONOS ---------- */
+        .social-icons a {
+            color: #6c63ff;
+            margin: 0 8px;
+            font-size: 1.4rem;
+            transition: color .3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #423ac7;
+        }
+
+        /* ---------- ANIMACIÓN ENTRADA ---------- */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Logo UMA */
+.logo-uma img {
+    width: 140px;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 2000;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.logo-uma img:hover {
+    transform: scale(1.05);
+}
+/* Logo izquierdo */
+.logo-left img {
+    width: 120px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 2000;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.logo-left img:hover {
+    transform: scale(1.05);
+}
+
+    </style>
+</head>
+
+<body>
+
+<!-- Logo UMA con enlace -->
+<div class="logo-uma">
+    <a href="https://www.uma.es/facultad-de-ciencias-de-la-educacion/" target="_blank" rel="noopener noreferrer">
+        <img src="./img/logouma.png" alt="Logo UMA">
+    </a>
+</div>
+<!-- Logo PROFEQUERONES (izquierda) -->
+<div class="logo-left">
+    <a target="_blank" rel="noopener noreferrer">
+        <img src="./img/escudo.png" alt="Escudo Profequerones">
+    </a>
+</div>
+
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="index.html">Método Montessori</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="introduccion.html">Introducción</a></li>
+                    <li class="nav-item"><a class="nav-link" href="historia.html">Historia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="metodologia.html">Metodología</a></li>
+                    <li class="nav-item"><a class="nav-link" href="principios.html">Principios</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="aplicacion.html">Aplicación</a></li>
+                    <li class="nav-item"><a class="nav-link" href="biblioteca.html">Biblioteca</a></li>
+                    <li class="nav-item"><a class="nav-link" href="materiales.html">Materiales</a></li>
+                    <li class="nav-item"><a class="nav-link" href="conclusion.html">Conclusión</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="integrantes.html">Integrantes</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- BANNER SUPERIOR -->
+    <div class="banner">
+        <h1>Integrantes del Proyecto</h1>
+        <p class="mt-2 fs-5">Conoce al equipo detrás de este trabajo</p>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="container my-5">
+
+        <div class="row g-4 justify-content-center">
+
+            <!-- Integrante 1 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="p-4 text-center team-card">
+                    <img src="./img/lucas.jpeg" class="team-img" alt="">
+                    <h4 class="mt-3">Lucas Pacheco Bravo</h4>
+                    <p class="text-muted">Atún Destructor</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Integrante 2 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="p-4 text-center team-card">
+                    <img src="img/integrante2.jpg" class="team-img" alt="">
+                    <h4 class="mt-3">Nathalie Sophie Orens Gómez</h4>
+                    <p class="text-muted">Sardina Voladora</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Integrante 3 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="p-4 text-center team-card">
+                    <img src="./img/noemi.jpg" class="team-img" alt="">
+                    <h4 class="mt-3">Noemí Lara Moreno</h4>
+                    <p class="text-muted">Boquerón Woman</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Integrante 4 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="p-4 text-center team-card">
+                    <img src="./img/natalia.jpg" class="team-img" alt="">
+                    <h4 class="mt-3">Natalia Muñoz Martinez</h4>
+                    <p class="text-muted">Merluza Mística</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Integrante 5 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="p-4 text-center team-card">
+                    <img src="./img/mario.jpeg" class="team-img" alt="">
+                    <h4 class="mt-3">Mario López Jiménez</h4>
+                    <p class="text-muted">Chanquete Cósmico</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Integrante 6 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="p-4 text-center team-card">
+                    <img src="./img/joselu.jpg" class="team-img" alt="">
+                    <h4 class="mt-3">José Luis Molina Redondo</h4>
+                    <p class="text-muted">Tiburón Titán</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Integrante 7 -->
+            <div class="col-md-4 col-lg-3 d-flex justify-content-center">
+                <div class="p-4 text-center team-card">
+                    <img src="./img/laura.jpg" class="team-img" alt="">
+                    <h4 class="mt-3">Laura Martos Hermoso</h4>
+                    <p class="text-muted">Coquina Galáctica</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
