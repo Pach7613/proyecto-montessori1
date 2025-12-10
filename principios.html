@@ -33,7 +33,7 @@
     .principio-icon {
         font-size: 30px;
         margin-right: 12px;
-        color: #4CAF50;
+        color: hsl(212, 100%, 50%);
     }
 
     @keyframes fadeIn {
@@ -46,7 +46,7 @@
         margin-top: 40px;
         background: #f8f9fa;
         padding: 25px;
-        border-left: 5px solid #4CAF50;
+        border-left: 5px solid hsl(212, 100%, 50%);
         border-radius: 8px;
         font-style: italic;
         box-shadow: 0 4px 12px rgba(0,0,0,0.06);
@@ -82,47 +82,45 @@
 
 </style>
 </head>
-
 <body>
-<!-- Logo UMA con enlace -->
-<div class="logo-uma">
-    <a href="https://www.uma.es/facultad-de-ciencias-de-la-educacion/" target="_blank" rel="noopener noreferrer">
-        <img src="./img/logouma.png" alt="Logo UMA">
-    </a>
-</div>
-<!-- Logo PROFEQUERONES (izquierda) -->
-<div class="logo-left">
-    <a target="_blank" rel="noopener noreferrer">
-        <img src="./img/escudo.png" alt="Escudo Profequerones">
-    </a>
-</div>
-
 
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
-<div class="container">
-<a class="navbar-brand fw-bold" href="index.html">Método Montessori</a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-<span class="navbar-toggler-icon"></span>
-</button>
+    <div class="container">
 
-<div class="collapse navbar-collapse" id="navbarNav">
-<ul class="navbar-nav ms-auto">
-    <li class="nav-item"><a class="nav-link" href="introduccion.html">Introducción</a></li>
-    <li class="nav-item"><a class="nav-link" href="historia.html">Historia</a></li>
-    <li class="nav-item"><a class="nav-link" href="metodologia.html">Metodología</a></li>
-    <li class="nav-item"><a class="nav-link active" href="principios.html">Principios</a></li>
-    <li class="nav-item"><a class="nav-link active" href="aplicacion.html">Aplicación</a></li>
-    <li class="nav-item"><a class="nav-link" href="biblioteca.html">Biblioteca</a></li>
-    <li class="nav-item"><a class="nav-link" href="materiales.html">Materiales</a></li>
-    <li class="nav-item"><a class="nav-link" href="conclusion.html">Conclusión</a></li>
-    <li class="nav-item"><a class="nav-link" href="integrantes.html">Integrantes</a></li>
-</ul>
-</div>
+        <!-- Logo izquierda -->
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="./img/escudo.png" alt="Escudo Profequerones" style="height:45px; margin-right:10px;">
+            Método Montessori
+        </a>
 
-</div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="introduccion.html">Introducción</a></li>
+                <li class="nav-item"><a class="nav-link" href="historia.html">Historia</a></li>
+                <li class="nav-item"><a class="nav-link" href="metodologia.html">Metodología</a></li>
+                <li class="nav-item"><a class="nav-link" href="principios.html">Principios</a></li>
+                <li class="nav-item"><a class="nav-link" href="aplicacion.html">Aplicación</a></li>
+                <li class="nav-item"><a class="nav-link" href="biblioteca.html">Biblioteca</a></li>
+                <li class="nav-item"><a class="nav-link" href="materiales.html">Materiales</a></li>
+                <li class="nav-item"><a class="nav-link" href="conclusion.html">Conclusión</a></li>
+                <li class="nav-item"><a class="nav-link" href="integrantes.html">Integrantes</a></li>
+                <li class="nav-item"><a class="nav-link" href="bibliografia.html">Bibliografía</a></li>
+            </ul>
+
+            <!-- Logo UMA a la derecha -->
+            <a href="https://www.uma.es/facultad-de-ciencias-de-la-educacion/" target="_blank" rel="noopener noreferrer">
+                <img src="./img/logouma.png" alt="Logo UMA" style="height:45px; margin-left:15px;">
+            </a>
+
+        </div>
+    </div>
 </nav>
-
 
 <!-- CONTENIDO -->
 <div class="container py-5 mt-4">
