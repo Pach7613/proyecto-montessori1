@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Montessori</title>
+
+<style>
+    :root {
+        --bg: #eef3ff;
+        --card: #ffffff;
+        --accent: #4d73ff;
+        --accent-dark: #3456e6;
+        --muted: #6b7280;
+    }
+
+    body {
+        margin: 0;
+        font-family: "Inter", Arial, sans-serif;
+        background: linear-gradient(180deg, var(--bg), #dfe7ff);
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 850px;
+        margin: auto;
+        background: var(--card);
+        border-radius: 14px;
+        box-shadow: 0 10px 40px rgba(0, 20, 80, 0.08);
+        padding: 30px;
+        animation: fadeIn 0.6s ease;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0; transform: translateY(20px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 0;
+        font-size: 28px;
+        color: var(--accent);
+        font-weight: 800;
+    }
+
+    .question {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .option {
+        background: #f9fbff;
+        padding: 14px;
+        border: 1px solid rgba(0,0,0,0.05);
+        border-radius: 10px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        transition: 0.2s;
+        font-size: 16px;
+    }
+
+    .option:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(50, 70, 120, 0.08);
+    }
+
+    .correct {
+        background: #e7ffef !important;
+        border-color: #5cd48c !important;
+    }
+
+    .wrong {
+        background: #ffe8e8 !important;
+        border-color: #ff6b6b !important;
+    }
+
+    .progress-bar {
+        height: 10px;
+        width: 100%;
+        background: #d3daff;
+        border-radius: 20px;
+        margin: 20px 0;
+        overflow: hidden;
+    }
+
+    .progress {
+        height: 100%;
+        width: 0%;
+        background: var(--accent);
+        transition: width 0.4s ease;
+    }
+
+    #nextBtn {
+        margin-top: 20px;
+        padding: 12px 22px;
+        background: var(--accent);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        display: none;
+    }
+
+    #nextBtn:hover {
+        background: var(--accent-dark);
+    }
+
+    .score-screen {
+        text-align: center;
+        display: none;
+    }
+
+    .score-title {
+        font-size: 26px;
+        font-weight: 800;
+        color: var(--accent);
+    }
+
+    .score-value {
+        font-size: 60px;
+        font-weight: 900;
+        margin: 20px 0;
+        color: var(--accent-dark);
+    }
+
+    .thank-you {
+        font-size: 20px;
+        margin-bottom: 25px;
+        color: var(--muted);
+        font-weight: 600;
+    }
+
+    .restart-btn, .home-btn {
+        padding: 12px 20px;
+        background: var(--accent);
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        border: none;
+        font-size: 18px;
+        margin: 8px;
+    }
+
+    .home-btn {
+        background: #222;
+    }
+
+    .home-btn:hover {
+        background: #000;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Quiz Montessori</h1>
+
+    <div class="progress-bar">
+        <div class="progress" id="progress"></div>
+    </div>
+
+    <div id="quizBox">
+        <div id="question" class="question"></div>
+        <div id="options"></div>
+        <button id="nextBtn" onclick="nextQuestion()">Siguiente pregunta →</button>
+    </div>
+
+    <div id="scoreScreen" class="score-screen">
+        <div class="score-title">¡Quiz completado!</div>
+        <div class="score-value" id="finalScore"></div>
+        <div class="thank-you">Muchas gracias por vuestra atención </div>
+
+        <button class="restart-btn" onclick="restart()">Reiniciar Quiz</button>
+
+        <!-- Botón para volver a la web -->
+        <button class="home-btn" onclick="window.location.href='index.html'">
+            Volver a la página principal
+        </button>
+    </div>
+</div>
+
+<script>
+// =========================
+//  PREGUNTAS (15 total)
+// =========================
+const questions = [
+    { q:"¿Quién creó el método Montessori?", a:["Jean Piaget","María Montessori","Vygotsky","Pestalozzi"], correct:1 },
+    { q:"¿Qué concepto es fundamental en Montessori?", a:["Memorización","Autonomía","Competencia","Rivalidad"], correct:1 },
+    { q:"Los materiales Montessori se caracterizan por:", a:["Ser coloridos sin sentido","Auto-corrección incorporada","Uso obligatorio del profesor","Ser digitales"], correct:1 },
+    { q:"El docente actúa como:", a:["Guía","Juez","Superior","Observador pasivo"], correct:0 },
+    { q:"El ambiente preparado se caracteriza por:", a:["Desorden","Accesibilidad y orden","Ruido constante","Decoración saturada"], correct:1 },
+    { q:"Un material típico del método es:", a:["Letras de lija","Tablets","Juegos de azar","Computador obligatorio"], correct:0 },
+    { q:"La mente absorbente se refiere a:", a:["Adultos que aprenden","Niños que absorben el entorno","Técnica de examen","Un libro"], correct:1 },
+    { q:"Los grupos con edades mezcladas fomentan:", a:["Competencia","Aprendizaje entre pares","Desigualdad","Aburrimiento"], correct:1 },
+    { q:"Las actividades de vida práctica NO buscan:", a:["Independencia","Orden","Dependencia del adulto","Coordinación"], correct:2 },
+    { q:"Las áreas Montessori NO incluyen:", a:["Lenguaje","Sensorial","Vida Práctica","Ciencia Ficción"], correct:3 },
+    { q:"¿Qué fomenta más la autonomía?", a:["Elegir actividades","Obedecer órdenes","Prohibir materiales","Seguir un único camino"], correct:0 },
+    { q:"El error en Montessori se corrige mediante:", a:["Castigo","Auto-corrección","Examen oral","Gritos"], correct:1 },
+    { q:"Las aulas Montessori usan muebles:", a:["Altos","Para adultos","Adaptados al niño","De metal"], correct:2 },
+    { q:"Los materiales sensoriales sirven para:", a:["Decorar","Afianzar sentidos","Jugar al azar","Competir"], correct:1 },
+    { q:"El respeto al ritmo individual implica:", a:["Forzar tiempos","Permitir ritmos propios","Competir por velocidad","Cronometrar"], correct:1 }
+];
+
+let index = 0;
+let score = 0;
+let canAnswer = true;
+
+function loadQuestion() {
+    const q = questions[index];
+    document.getElementById("question").innerText = q.q;
+
+    const opts = document.getElementById("options");
+    opts.innerHTML = "";
+
+    q.a.forEach((opt, i) => {
+        let div = document.createElement("div");
+        div.className = "option";
+        div.innerText = opt;
+        div.onclick = () => selectOption(i, div);
+        opts.appendChild(div);
+    });
+
+    canAnswer = true;
+    document.getElementById("nextBtn").style.display = "none";
+    updateProgress();
+}
+
+function selectOption(i, element) {
+    if (!canAnswer) return;
+    canAnswer = false;
+
+    const correct = questions[index].correct;
+    const options = document.querySelectorAll(".option");
+
+    if (i === correct) {
+        element.classList.add("correct");
+        score++;
+    } else {
+        element.classList.add("wrong");
+        options[correct].classList.add("correct");
+    }
+
+    document.getElementById("nextBtn").style.display = "block";
+}
+
+function nextQuestion() {
+    index++;
+    if (index >= questions.length) {
+        showScore();
+        return;
+    }
+    loadQuestion();
+}
+
+function updateProgress() {
+    const pct = ((index) / questions.length) * 100;
+    document.getElementById("progress").style.width = pct + "%";
+}
+
+function showScore() {
+    document.getElementById("quizBox").style.display = "none";
+    document.getElementById("scoreScreen").style.display = "block";
+    document.getElementById("finalScore").innerText = score + " / " + questions.length;
+}
+
+function restart() {
+    index = 0;
+    score = 0;
+    document.getElementById("scoreScreen").style.display = "none";
+    document.getElementById("quizBox").style.display = "block";
+    loadQuestion();
+}
+
+loadQuestion();
+</script>
+
+</body>
+</html>
