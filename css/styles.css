@@ -216,3 +216,15 @@ body {
     min-height: 50px;
     text-align: center;
 }
+/* Ajuste solo en pantallas pequeñas */
+@media (max-width: 768px) {
+    .hero-img {
+        height: 180px; /* puedes ajustar a tu gusto */
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .hero-section {
+        padding-top: 50px !important; /* evita que tape la navbar */
+    }
+}
